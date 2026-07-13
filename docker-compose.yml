@@ -1,0 +1,7 @@
+services:
+  gymtrack:
+    build: .
+    container_name: gymtrack
+    restart: unless-stopped
+    ports:
+      - "8080:80"
