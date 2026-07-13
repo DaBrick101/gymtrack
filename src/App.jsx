@@ -274,6 +274,13 @@ export default function App() {
       return next;
     });
   };
+  const removeSetFromActive = (exIdx, setIdx) => {
+    setActiveSession((prev) => {
+      const next = structuredClone(prev);
+      next.exercises[exIdx].sets.splice(setIdx, 1);
+      return next;
+    });
+  };
   const finishWorkout = () => {
     const cleaned = {
       ...activeSession,
@@ -371,6 +378,9 @@ export default function App() {
                       <button onClick={() => toggleSetDone(exIdx, setIdx)} className="ml-auto w-8 h-8 rounded-lg flex items-center justify-center"
                         style={s.done ? { background: C.accent, color: C.accentText } : { background: C.surface2, color: C.textDim, border: `1px solid ${C.border}` }}>
                         <Check size={16} />
+                      </button>
+                      <button onClick={() => removeSetFromActive(exIdx, setIdx)} className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ color: C.danger }}>
+                        <Trash2 size={16} />
                       </button>
                     </div>
                   ))}
