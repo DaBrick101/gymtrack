@@ -31,6 +31,10 @@ const DEFAULT_EXERCISES = [
   { id: uid(), name: "Schulterdrücken", muscle: "Schultern" },
   { id: uid(), name: "Klimmzug", muscle: "Rücken" },
   { id: uid(), name: "Bizepscurls", muscle: "Arme" },
+  { id: uid(), name: "Seitheben", muscle: "Schultern" },
+  { id: uid(), name: "Trizeps-Pushdown", muscle: "Arme" },
+  { id: uid(), name: "Rudern", muscle: "Rücken" },
+  { id: uid(), name: "Face Pull", muscle: "Schultern" },
 ];
 
 function makeDefaultData() {
@@ -38,16 +42,28 @@ function makeDefaultData() {
   const knie = DEFAULT_EXERCISES[1].id;
   const kreuz = DEFAULT_EXERCISES[2].id;
   const schulter = DEFAULT_EXERCISES[3].id;
+  const klimm = DEFAULT_EXERCISES[4].id;
+  const bizeps = DEFAULT_EXERCISES[5].id;
+  const seitheben = DEFAULT_EXERCISES[6].id;
+  const trizeps = DEFAULT_EXERCISES[7].id;
+  const rudern = DEFAULT_EXERCISES[8].id;
+  const facePull = DEFAULT_EXERCISES[9].id;
   return {
     exercises: DEFAULT_EXERCISES,
     plans: [
       { id: uid(), name: "Push Day", items: [
-        { exerciseId: bank, targetSets: 4, targetReps: 8 },
-        { exerciseId: schulter, targetSets: 3, targetReps: 10 },
+        { exerciseId: knie, targetSets: 3, targetReps: 8 },
+        { exerciseId: bank, targetSets: 3, targetReps: 8 },
+        { exerciseId: schulter, targetSets: 3, targetReps: 8 },
+        { exerciseId: seitheben, targetSets: 3, targetReps: 15 },
+        { exerciseId: trizeps, targetSets: 3, targetReps: 12 },
       ]},
-      { id: uid(), name: "Leg Day", items: [
-        { exerciseId: knie, targetSets: 4, targetReps: 6 },
+      { id: uid(), name: "Pull Day", items: [
         { exerciseId: kreuz, targetSets: 3, targetReps: 5 },
+        { exerciseId: klimm, targetSets: 3, targetReps: 8 },
+        { exerciseId: rudern, targetSets: 3, targetReps: 10 },
+        { exerciseId: bizeps, targetSets: 3, targetReps: 12 },
+        { exerciseId: facePull, targetSets: 3, targetReps: 15 },
       ]},
     ],
     sessions: [],
